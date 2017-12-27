@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.project.dao.ZtmdmUserMapper">
+  <resultMap id="BaseResultMap" type="com.company.project.model.ZtmdmUser">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="company" jdbcType="INTEGER" property="company" />
+    <result column="dept" jdbcType="INTEGER" property="dept" />
+    <result column="account" jdbcType="CHAR" property="account" />
+    <result column="password" jdbcType="CHAR" property="password" />
+    <result column="role" jdbcType="CHAR" property="role" />
+    <result column="realname" jdbcType="CHAR" property="realname" />
+    <result column="nickname" jdbcType="CHAR" property="nickname" />
+    <result column="commiter" jdbcType="VARCHAR" property="commiter" />
+    <result column="avatar" jdbcType="CHAR" property="avatar" />
+    <result column="birthday" jdbcType="DATE" property="birthday" />
+    <result column="gender" jdbcType="CHAR" property="gender" />
+    <result column="email" jdbcType="CHAR" property="email" />
+    <result column="skype" jdbcType="CHAR" property="skype" />
+    <result column="qq" jdbcType="CHAR" property="qq" />
+    <result column="yahoo" jdbcType="CHAR" property="yahoo" />
+    <result column="gtalk" jdbcType="CHAR" property="gtalk" />
+    <result column="wangwang" jdbcType="CHAR" property="wangwang" />
+    <result column="mobile" jdbcType="CHAR" property="mobile" />
+    <result column="phone" jdbcType="CHAR" property="phone" />
+    <result column="address" jdbcType="CHAR" property="address" />
+    <result column="zipcode" jdbcType="CHAR" property="zipcode" />
+    <result column="join" jdbcType="DATE" property="join" />
+    <result column="visits" jdbcType="INTEGER" property="visits" />
+    <result column="ip" jdbcType="CHAR" property="ip" />
+    <result column="last" jdbcType="INTEGER" property="last" />
+    <result column="fails" jdbcType="TINYINT" property="fails" />
+    <result column="locked" jdbcType="TIMESTAMP" property="locked" />
+    <result column="deleted" jdbcType="CHAR" property="deleted" />
+  </resultMap>
+</mapper>

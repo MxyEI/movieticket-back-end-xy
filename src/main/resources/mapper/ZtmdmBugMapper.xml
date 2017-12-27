@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.project.dao.ZtmdmBugMapper">
+  <resultMap id="BaseResultMap" type="com.company.project.model.ZtmdmBug">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="company" jdbcType="INTEGER" property="company" />
+    <result column="product" jdbcType="INTEGER" property="product" />
+    <result column="module" jdbcType="INTEGER" property="module" />
+    <result column="project" jdbcType="INTEGER" property="project" />
+    <result column="story" jdbcType="INTEGER" property="story" />
+    <result column="storyVersion" jdbcType="SMALLINT" property="storyversion" />
+    <result column="task" jdbcType="INTEGER" property="task" />
+    <result column="toTask" jdbcType="INTEGER" property="totask" />
+    <result column="toStory" jdbcType="INTEGER" property="tostory" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="keywords" jdbcType="VARCHAR" property="keywords" />
+    <result column="severity" jdbcType="TINYINT" property="severity" />
+    <result column="pri" jdbcType="TINYINT" property="pri" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="os" jdbcType="VARCHAR" property="os" />
+    <result column="browser" jdbcType="VARCHAR" property="browser" />
+    <result column="hardware" jdbcType="VARCHAR" property="hardware" />
+    <result column="found" jdbcType="VARCHAR" property="found" />
+    <result column="status" jdbcType="CHAR" property="status" />
+    <result column="confirmed" jdbcType="BIT" property="confirmed" />
+    <result column="activatedCount" jdbcType="SMALLINT" property="activatedcount" />
+    <result column="mailto" jdbcType="VARCHAR" property="mailto" />
+    <result column="openedBy" jdbcType="VARCHAR" property="openedby" />
+    <result column="openedDate" jdbcType="TIMESTAMP" property="openeddate" />
+    <result column="openedBuild" jdbcType="VARCHAR" property="openedbuild" />
+    <result column="assignedTo" jdbcType="VARCHAR" property="assignedto" />
+    <result column="assignedDate" jdbcType="TIMESTAMP" property="assigneddate" />
+    <result column="resolvedBy" jdbcType="VARCHAR" property="resolvedby" />
+    <result column="resolution" jdbcType="VARCHAR" property="resolution" />
+    <result column="resolvedBuild" jdbcType="VARCHAR" property="resolvedbuild" />
+    <result column="resolvedDate" jdbcType="TIMESTAMP" property="resolveddate" />
+    <result column="closedBy" jdbcType="VARCHAR" property="closedby" />
+    <result column="closedDate" jdbcType="TIMESTAMP" property="closeddate" />
+    <result column="duplicateBug" jdbcType="INTEGER" property="duplicatebug" />
+    <result column="linkBug" jdbcType="VARCHAR" property="linkbug" />
+    <result column="case" jdbcType="INTEGER" property="Case" />
+    <result column="caseVersion" jdbcType="SMALLINT" property="caseversion" />
+    <result column="result" jdbcType="INTEGER" property="result" />
+    <result column="lastEditedBy" jdbcType="VARCHAR" property="lasteditedby" />
+    <result column="lastEditedDate" jdbcType="TIMESTAMP" property="lastediteddate" />
+    <result column="deleted" jdbcType="CHAR" property="deleted" />
+    <result column="yes" jdbcType="VARCHAR" property="yes" />
+    <result column="steps" jdbcType="LONGVARCHAR" property="steps" />
+  </resultMap>
+
+
+
+</mapper>

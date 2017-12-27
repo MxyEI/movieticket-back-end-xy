@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.project.dao.BugCountsWithUserMapper">
+
+  <resultMap id="ResolvedInfo" type="com.company.project.DTO.BugCountsWithUser">
+    <result column="realname" property="realname" jdbcType="VARCHAR"/>
+    <result column="count" property="count" jdbcType="INTEGER"/>
+  </resultMap>
+
+  <resultMap id="ResolvedUserInfo" type="com.company.project.DTO.BugCountsWithUser">
+    <result column="date" property="date" jdbcType="TIMESTAMP"/>
+    <result column="count" property="count" jdbcType="INTEGER"/>
+  </resultMap>
+
+  <!--最近？天每人解决bug数-->
+  <select id="getBugsWithUser" resultMap="ResolvedInfo" parameterType="Integer">
+    SELECT
+    COUNT(u.realname) count,
+    u.realname
+    FROM
+    ztmdm_bug b,
+    ztmdm_user u
+    WHERE
+    b.resolvedDate BETWEEN date_sub(now(), INTERVAL #{nearnumDay} DAY)
+    AND now()
+    AND b.resolvedBy = u.account
+    GROUP BY
+    realname
+  </select>
+
+  <!--某个人最近?天解决bug数-->
+  <select id="findResolvedDateNearHowmuchDay" resultMap="ResolvedUserInfo">
+    SELECT
+    COUNT(
+    DATE_FORMAT(b.resolvedDate, '%Y-%m-%d')
+    ) `count`,
+    DATE_FORMAT(b.resolvedDate, '%Y-%m-%d') `date`
+    FROM
+    ztmdm_bug b,
+    ztmdm_user u
+    WHERE
+    b.resolvedDate BETWEEN date_sub(now(), INTERVAL #{param2} DAY )
+    AND now()
+    AND b.resolvedBy = u.account
+    AND u.realname = #{param1}
+    GROUP BY
+    DATE_FORMAT(b.resolvedDate, '%Y-%m-%d')
+    ORDER BY
+    DATE_FORMAT(b.resolvedDate, '%Y-%m-%d')
+  </select>
+
+
+
+
+
+
+</mapper>
