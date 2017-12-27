@@ -57,7 +57,7 @@ public class SwaggerConfig extends WebMvcConfigurerAdapter {
         List<Parameter> aParameters = new ArrayList<Parameter>();
         aParameters.add(aParameterBuilder.build());
         return new Docket(DocumentationType.SWAGGER_2).groupName("MxyEI").select().apis(RequestHandlerSelectors.any())
-                .paths(PathSelectors.ant("/ztmdm/**")).build().apiInfo(apiInfo1()).globalOperationParameters(aParameters);
+                .paths(PathSelectors.ant("/api/**")).build().apiInfo(apiInfo1()).globalOperationParameters(aParameters);
     }
 
 
