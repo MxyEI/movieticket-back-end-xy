@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 public class Comments {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private String id;
 
     private String username;

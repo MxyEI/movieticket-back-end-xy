@@ -5,6 +5,7 @@ import javax.persistence.*;
 
 public class Coupons {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private String id;
 
     private Short discount;

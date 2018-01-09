@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 public class Favorites {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private String id;
 
     private String username;

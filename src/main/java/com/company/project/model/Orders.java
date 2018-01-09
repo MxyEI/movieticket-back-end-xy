@@ -5,6 +5,7 @@ import javax.persistence.*;
 
 public class Orders {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private String id;
 
     @Column(name = "screenId")

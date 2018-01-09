@@ -5,6 +5,7 @@ import javax.persistence.*;
 
 public class Movies {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private String id;
 
     private String name;
