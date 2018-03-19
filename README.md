@@ -11,4 +11,7 @@ test目录下的CodeGenerator
      后端使用springboot+mybatis+mysql+swagger；注释要详细，带设计文档；
      后端管理系统功能：添加影院、影厅、电影详情、电影图片，带echarts图表显示销售详情、流量高峰等信息。注释要详细，带设计文档；
      整体需求：前后端分离、交互只用json；后端管理系统也是单独分离的系统；
+     
+     后端：https://github.com/MxyEI/movieticket-back-end-xy
+     
 
