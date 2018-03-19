@@ -9,7 +9,7 @@ test目录下的CodeGenerator
 
 需求：
      
-     前端使用vue框架，具有查看影讯、选座、在线支付等功能，模仿猫眼电影网页端，注释要详细，带设计文档；
+     前端使用vue框架，vue全家桶+webpack 使用ES6规范；具有查看影讯、选座、在线支付等功能，模仿猫眼电影网页端，注释要详细，带设计文档；
 
      后端使用springboot+mybatis+mysql+swagger；注释要详细，带设计文档；
      
