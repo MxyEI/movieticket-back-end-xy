@@ -17,6 +17,8 @@ test目录下的CodeGenerator
      
      整体需求：前后端分离、交互只用json；后端管理系统也是单独分离的系统；
      
-     后端：https://github.com/MxyEI/movieticket-back-end-xy
+     后端项目地址：https://github.com/MxyEI/movieticket-back-end-xy
+     
+文件：论文一份；设计文档一份；前端代码（带完整注释）一套；后端代码（带完整注释）一套；后台管理系统（带完整注释）一套；截止日期 2018-04-20
      
 
