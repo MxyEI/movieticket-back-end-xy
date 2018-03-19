@@ -7,7 +7,7 @@ http://localhost:8080/swagger-ui.html
 test目录下的CodeGenerator
 代码生成器，根据数据表名称生成对应的Model、Mapper、Service、Controller简化开发。
 
-
-停滞了一段时间；2018.03.18
-接下来会接着更新数据可视化部分API。
+需求：前端使用vue框架，具有查看影讯、选座、在线支付等功能，模仿猫眼电影网页端，注释要详细，带设计文档；
+     后端使用springboot+mybatis+mysql+swagger；
+     后端管理系统功能：添加影院、影厅、电影详情、电影图片，带echarts图表显示销售详情、流量高峰等信息。
 
