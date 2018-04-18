@@ -36,8 +36,8 @@ public class Swagger2Config {
         return new ApiInfoBuilder()
                 .title("电影售票项目Swagger调试页面")
                 .description("描述：Spring Boot中使用Swagger2构建RESTful APIs")
-                .termsOfServiceUrl("http://www.wowker.com/")
-                .contact("stars小组")
+                .termsOfServiceUrl("http://btorg.org/")
+                .contact("mxy")
                 .version("1.0")
                 .build();
     }
