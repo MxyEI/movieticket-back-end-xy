@@ -14,7 +14,7 @@ import java.io.*;
 
 
 /**
- * Listener for beans construction.
+ * bean构造器（Listener for beans construction）.
  */
 @Component
 public class BeanFinishedListener implements ApplicationListener<ContextRefreshedEvent> {

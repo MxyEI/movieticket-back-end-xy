@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 /**
- * Cross-Origin Resource Sharing filter.
+ * 跨域过滤器（Cross-Origin Resource Sharing filter）.
  */
 public class CORSFilter implements Filter {
     private static final Logger Log = LoggerFactory.getLogger(CORSFilter.class);
