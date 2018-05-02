@@ -1,5 +1,6 @@
 package com.awesometickets.business.services;
 
+import com.awesometickets.business.entities.MovieOnShow;
 import com.awesometickets.business.entities.Seat;
 import com.awesometickets.business.entities.repositories.SeatRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,7 +62,15 @@ public class SeatService {
             int col = seats[i++];
             Seat seat = seatRepo.findByRowAndColAndMovieOnShowId(row, col, movieOnShowId);
             if (seat == null) {
-                seatList.clear();
+                Seat s = new Seat();
+                s.setRow(row);
+                s.setCol(col);
+                MovieOnShow mos = new MovieOnShow();
+                mos.setMovieOnShowId(movieOnShowId);
+                s.setMovieOnShow(mos);
+                s.setAvailable(true);
+                seatList.add(s);
+                //seatList.clear();
                 return false;
             }
             seatList.add(seat);

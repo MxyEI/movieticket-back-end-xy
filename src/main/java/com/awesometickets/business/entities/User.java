@@ -8,6 +8,7 @@ public class User {
     private Integer userId;
     private String phoneNum;
     private String password;
+    //剩余购票次数
     private Integer remainPurchase;
 
     public User() {
