@@ -6,24 +6,24 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Validation of all request parameters.
+ * 校验请求参数（Validation of all request parameters）.
  */
 @Component
 public class Validator {
     /**
-     * China TELECOM phone number
+     * 电信号码段(China TELECOM phone number）
      * at 133,153,180,181,189,177,1700,173
      * **/
     private static final String CHINA_TELECOM_PATTERN = "(^1(33|53|7[37]|8[019])\\d{8}$)|(^1700\\d{7}$)";
 
     /**
-     * China UNICOM phone number
+     * 联通号码段（China UNICOM phone number）
      * at 130,131,132,155,156,185,186,145,176,1707,1708,1709
      * **/
     private static final String CHINA_UNICOM_PATTERN = "(^1(3[0-2]|4[5]|5[56]|7[6]|8[56])\\d{8}$)|(^170[7-9]\\d{7}$)";
 
     /**
-     * China MOBILE phone number
+     * 移动号码段（China MOBILE phone number）
      * at 134,135,136,137,138,139,150,151,152,157,158,159,182,183,184,187,188,147,178,1705
      *
      **/
