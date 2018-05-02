@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="movie-manager" />
+        <module name="service-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="movie-manager" target="1.8" />
+      <module name="service-server" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

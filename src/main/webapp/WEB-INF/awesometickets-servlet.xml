@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.awesometickets"/>
+
+    <mvc:annotation-driven/>
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/resource/*"/>
+            <bean id="cacheInterceptor" class="com.awesometickets.web.interceptor.CacheInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+    <bean id="propertyConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location">
+            <value>/config.properties</value>
+        </property>
+        <property name="fileEncoding" value="utf-8" />
+    </bean>
+
+    <bean id="cookieSerializer" class="org.springframework.session.web.http.DefaultCookieSerializer">
+        <property name="cookieName" value="${cookie.name}" />
+        <property name="cookiePath" value="${cookie.path}" />
+        <property name="useSecureCookie" value="${cookie.secure}" />
+        <property name="useHttpOnlyCookie" value="${cookie.httpOnly}" />
+        <property name="cookieMaxAge" value="${cookie.maxAge}" />
+    </bean>
+
+    <bean id="sessionRepositoryFilter"
+          class="org.springframework.session.web.http.SessionRepositoryFilter">
+        <constructor-arg ref="sessionRepository"/>
+        <property name="httpSessionStrategy">
+            <bean class="org.springframework.session.web.http.CookieHttpSessionStrategy">
+                <property name="cookieSerializer" ref="cookieSerializer" />
+            </bean>
+        </property>
+    </bean>
+
+    <bean class="org.springframework.session.data.redis.config.annotation.web.http.RedisHttpSessionConfiguration"/>
+
+    <bean id="jedisConnectionFactory"
+          class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+        <property name="hostName" value="${redis.host}"/>
+        <property name="port" value="${redis.port}"/>
+    </bean>
+
+    <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+        <property name="connectionFactory" ref="jedisConnectionFactory"/>
+        <property name="defaultSerializer">
+            <bean class="org.springframework.data.redis.serializer.StringRedisSerializer"/>
+        </property>
+    </bean>
+
+    <bean id="exceptionResolver" class="com.awesometickets.config.ExceptionHandler"/>
+
+    <!-- Import the config of jpa and hibernate -->
+    <import resource="business-config.xml"/>
+
+</beans>

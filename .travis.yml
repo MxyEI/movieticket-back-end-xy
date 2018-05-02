@@ -1,0 +1,34 @@
+sudo: false
+
+language: java
+
+python:
+  - "3.6"
+
+os:
+  - linux
+
+cache:
+  directories:
+    - $HOME/.m2
+    - $HOME/.cache/pip
+
+services:
+  - mysql
+  - redis-server
+
+branches:
+  only:
+    - master
+    - /^(dev)|(dev_.*)$/
+
+before_script:
+  - mysqladmin -u root password "123456"
+  - git clone https://github.com/AwesomeTickets/Database
+  - cd Database
+  - pip install --user -r requirements.txt
+  - python init.py
+  - cd .. && echo ${LCK} > .awesometickets
+
+script:
+  - mvn clean test
