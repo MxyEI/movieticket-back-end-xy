@@ -70,7 +70,8 @@ public class TicketController {
             return new ErrorResponse(response, ErrorStatus.PURCHASE_UNAVAILABLE);
         }
         List<Seat> seatList = new ArrayList<Seat>();
-        if (!seatService.checkSeatExist(seatList, seats, movieOnShowId)) {
+        //如果座位已存在，则返回
+        if (seatService.checkSeatExist(seatList, seats, movieOnShowId)) {
             return new ErrorResponse(response, ErrorStatus.SEAT_NOT_FOUND);
         } else if (!seatService.checkSeatsAvailable(seatList)) {
             return new ErrorResponse(response, ErrorStatus.SEAT_UNAVAILABLE);
