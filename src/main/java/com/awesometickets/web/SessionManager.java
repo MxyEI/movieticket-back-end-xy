@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 
 
 /**
- * Manage the session.
+ * session管理类.
  */
 @Component
 public class SessionManager {
@@ -26,7 +26,7 @@ public class SessionManager {
     private int SESSION_MAX_AGE;
 
     /**
-     * Add a user to current session.
+     * 增加用户到session.
      *
      * @param user The user object
      * @param req The http request
@@ -38,8 +38,7 @@ public class SessionManager {
     }
 
     /**
-     * Return the phone number store in the session, or
-     * null if session does not exist.
+     * 返回手机号，如果session不存在则返回null
      *
      * @param req The hee
      */
@@ -52,7 +51,7 @@ public class SessionManager {
     }
 
     /**
-     * Return true if session exists.
+     * 返回true，如果session存在.
      *
      * @param req The http request
      */
@@ -61,7 +60,7 @@ public class SessionManager {
     }
 
     /**
-     * Remove current session.
+     * 移除session.
      *
      * @param req The http request
      */

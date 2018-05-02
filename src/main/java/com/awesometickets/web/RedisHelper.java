@@ -11,7 +11,7 @@ import javax.annotation.PostConstruct;
 
 
 /**
- * Provide methods to communicate with redis.
+ * Redis.
  */
 @Component
 public class RedisHelper {
