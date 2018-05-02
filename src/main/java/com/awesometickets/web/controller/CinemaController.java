@@ -24,6 +24,7 @@ import com.awesometickets.business.services.CinemaService;
 /**
  * RESTFul API of cinema resources.
  */
+
 @RestController
 @RequestMapping("/resource/cinema")
 public class CinemaController {
