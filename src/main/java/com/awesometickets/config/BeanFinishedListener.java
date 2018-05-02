@@ -56,6 +56,8 @@ public class BeanFinishedListener implements ApplicationListener<ContextRefreshe
             LOG.warn("sms配置文件路径："+FILE_CONF);
         } catch (FileNotFoundException e) {
             LOG.warn("sms配置文件未找到.");
+            LOG.warn("使用默认id和key");
+            SmsService.getInstance().init("y5IV5xeQExj4rE0pkTv6X2Ce-gzGzoHsz","R1mSnSRf47kxEJuau8OPjeiX");
         } catch (IOException e) {
             LOG.error(e.getMessage());
             e.printStackTrace();
