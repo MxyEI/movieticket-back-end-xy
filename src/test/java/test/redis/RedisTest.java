@@ -11,6 +11,9 @@ import test.BaseTest;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+/**
+ * redis 测试
+ */
 public class RedisTest extends BaseTest {
 
     @Autowired
