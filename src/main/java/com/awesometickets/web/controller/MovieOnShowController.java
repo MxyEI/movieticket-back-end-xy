@@ -14,9 +14,13 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import java.sql.Date;
 import java.sql.Time;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
+
 
 import com.awesometickets.web.controller.response.CollectionResponse;
 import com.awesometickets.web.controller.response.ErrorResponse;
@@ -90,9 +94,16 @@ public class MovieOnShowController {
     public RestResponse getRecentMovieOnShow(@RequestParam("movieId") Integer movieId,
                                              HttpServletRequest request, HttpServletResponse response) {
         LogUtil.logReq(Log, request);
-        final int range = 3;
-        // Date date = Calendar.getInstance().getTime();
-        Date date = Date.valueOf("2018-05-01");
+        //设置获取接下来的5天内的影讯
+        final int range = 5;
+         //Date date = (Date) Calendar.getInstance().getTime();
+        //Date date = Date.valueOf("2018-05-05");
+
+        //获取当前时间
+        java.sql.Date date = new java.sql.Date(System.currentTimeMillis());
+        String st = String.valueOf(date);
+        date = Date.valueOf(st);
+
         List<Date> dates = new ArrayList<Date>();
         for (int i = 0; i < range; i++) {
             dates.add(date);
