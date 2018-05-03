@@ -13,7 +13,9 @@ import org.springframework.web.context.WebApplicationContext;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
-
+/**
+ * 测试API
+ */
 @Transactional
 public abstract class RestControllerTest extends BaseTest {
     protected static final String URI_MOVIE = "/resource/movie/{movieId}";
