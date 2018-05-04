@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 /**
- * Error response of RESTFul API.
+ *  错误响应（Error response of RESTFul API.）
  */
 public class ErrorResponse extends RestResponse {
     private static final String KEY_CODE = "code";

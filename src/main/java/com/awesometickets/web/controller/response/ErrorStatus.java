@@ -5,7 +5,7 @@ import java.util.Map;
 
 
 /**
- * Store custom error codes and their status code and information.
+ *  状态码（Store custom error codes and their status code and information.）
  */
 public class ErrorStatus {
 

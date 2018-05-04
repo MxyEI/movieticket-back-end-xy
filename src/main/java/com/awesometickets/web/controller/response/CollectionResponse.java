@@ -5,7 +5,7 @@ import java.util.Collection;
 
 
 /**
- * Collection response of RESTFul API.
+ *  响应处理（Collection response of RESTFul API.）
  */
 public class CollectionResponse extends RestResponse {
 
