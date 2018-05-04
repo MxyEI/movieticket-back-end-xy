@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 /**
- * An ExceptionHandler to return a html for all exception.
+ * 异常处理器（An ExceptionHandler to return a html for all exception.）
  */
 public class ExceptionHandler implements HandlerExceptionResolver {
 
