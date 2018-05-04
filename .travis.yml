@@ -24,7 +24,7 @@ branches:
 
 before_script:
   - mysqladmin -u root password "123456"
-  - git clone https://github.com/AwesomeTickets/Database
+  - git clone https://github.com/MxyEI/Database
   - cd Database
   - pip install --user -r requirements.txt
   - python init.py
