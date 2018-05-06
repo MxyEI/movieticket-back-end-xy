@@ -32,7 +32,7 @@ http://localhost:8000/swagger-ui.html
 - 创建docker镜像
 
     ```bash
-    $ docker build -t service-server .
+    $ docker build -t movieticket-back-end-xy .
     ```
 
 
