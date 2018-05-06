@@ -1,6 +1,7 @@
 .classpath
 .project
 target/
+data_model/
 bin/
 .settings/
 .idea/
