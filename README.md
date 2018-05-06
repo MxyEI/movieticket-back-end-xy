@@ -1,5 +1,4 @@
 # MovieTicket-Back-End-XY
-影院订票系统后端-spring+springmvc+hibernate+mysql5.7
 
 ## API地址
 http://localhost:8000/swagger-ui.html
