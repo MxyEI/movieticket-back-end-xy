@@ -63,6 +63,7 @@ public class SeatService {
             Seat seat = seatRepo.findByRowAndColAndMovieOnShowId(row, col, movieOnShowId);
             //如果结果为空，则把选择的座位表和movieonshowid加入seatlist
             if (seat == null) {
+
                 Seat s = new Seat();
                 s.setRow(row);
                 s.setCol(col);
@@ -71,11 +72,12 @@ public class SeatService {
                 s.setMovieOnShow(mos);
                 s.setAvailable(true);
                 seatList.add(s);
+
                 //seatList.clear();
-                return false;
+                //return false;
             }
-            seatList.add(seat);
+            //seatList.add(seat);
         }
-        return true;
+        return false;
     }
 }
