@@ -1,6 +1,7 @@
 package com.awesometickets.business.entities.repositories;
 
 import com.awesometickets.business.entities.Movie;
+import com.awesometickets.business.entities.MovieStatus;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -12,7 +13,10 @@ import java.util.List;
 public interface MovieRepository extends CrudRepository<Movie, Integer> {
 
     //查询电影是否在售
-    @Query("select m.movieId from Movie m where m.movieStatus.statusName = ?1")
+//    select m.movie_id from Movie m left join MovieStatus ms on m.movie_status_id = ms.movie_status_id
+//    where ms.status_name ='on'
+//    order by m.pub_date desc
+    @Query("select m.movieId from Movie m where m.movieStatus.statusName = ?1 order by m.pubDate desc")
     List<Integer> findByMovieStatus(String status);
 
     //查询首页大图
