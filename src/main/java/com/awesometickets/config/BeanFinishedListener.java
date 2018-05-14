@@ -30,8 +30,9 @@ public class BeanFinishedListener implements ApplicationListener<ContextRefreshe
             LOG.info("Beans 已构造.");
             loadConfig();
             ErrorStatus.init();
-            SmsService.getInstance().init(configs[0], configs[1]);
-            LOG.info("sms ID:"+configs[0]+",sms key:"+configs[1]);
+            //如果使用maven启动项目，则需取消此行注释
+            //SmsService.getInstance().init(configs[0], configs[1]);
+            //LOG.info("sms ID:"+configs[0]+",sms key:"+configs[1]);
         }
     }
 
@@ -55,6 +56,7 @@ public class BeanFinishedListener implements ApplicationListener<ContextRefreshe
             LOG.warn("sms配置文件已加载.");
             LOG.warn("sms配置文件路径："+FILE_CONF);
         } catch (FileNotFoundException e) {
+            LOG.warn("sms配置文件路径："+FILE_CONF);
             LOG.warn("sms配置文件未找到.");
             LOG.warn("使用默认id和key");
             SmsService.getInstance().init("y5IV5xeQExj4rE0pkTv6X2Ce-gzGzoHsz","R1mSnSRf47kxEJuau8OPjeiX");
