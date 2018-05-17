@@ -33,7 +33,10 @@ http://localhost:8000/swagger-ui.html
     ```bash
     $ docker build -t movieticket-back-end-xy .
     ```
-
+- 打包war
+    ```bash
+    $ mvn package -Dmaven.test.skip=true -Ptest
+    ```
 
 ## License
 

@@ -25,7 +25,7 @@ import javax.servlet.http.HttpServletResponse;
 public class CORSFilter implements Filter {
     private static final Logger Log = LoggerFactory.getLogger(CORSFilter.class);
     private static Set<String> allowedOrigins = new HashSet<String>(Arrays.asList(
-        "http://localhost", "http://localhost:8080", "http://movie.btorg.org"));
+        "http://localhost", "http://localhost:8080", "http://movie.btorg.org","http://movie.btorg.org:8080"));
 
     public void init(FilterConfig filterConfig) throws ServletException {}
 
