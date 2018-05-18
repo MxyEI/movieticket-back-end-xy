@@ -97,9 +97,11 @@ public class TicketService {
             TicketHistoryDTO dto;
             if (!map.containsKey((String) los.get(i)[0])) {
                 dto = new TicketHistoryDTO();
+
                 dto.code = (String)los.get(i)[0];
                 dto.valid = (Boolean) los.get(i)[1];
                 dto.movieOnShowId = (Integer) los.get(i)[2];
+                dto.ticketId= (Integer) los.get(i)[5];
                 dto.seats = new ArrayList<Integer[]>();
                 map.put(dto.code, dto);
             } else {
@@ -116,7 +118,7 @@ public class TicketService {
      * @return The generated ticket code
      */
     @Transactional(propagation= Propagation.REQUIRED, rollbackFor = Exception.class)
-    private String genCode() {
+    public String genCode() {
         String codeStr;
         do {
             double code = random.nextDouble() * 8999999999D + 1000000000D;
@@ -132,7 +134,7 @@ public class TicketService {
      * @return True if the ticket code has been generated.
      */
     @Transactional(propagation= Propagation.REQUIRED, rollbackFor = Exception.class)
-    private boolean hasCode(String code) {
+    public boolean hasCode(String code) {
         return !ticketRepo.findUserIdByCode(code).isEmpty();
     }
 

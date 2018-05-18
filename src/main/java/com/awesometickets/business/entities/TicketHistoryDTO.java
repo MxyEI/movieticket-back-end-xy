@@ -6,6 +6,7 @@ import java.util.List;
  * A Data Transfer Object for
  */
 public class TicketHistoryDTO {
+    public Integer ticketId;
     public String code;
     public Boolean valid;
     public List<Integer[]> seats;
