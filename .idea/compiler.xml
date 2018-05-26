@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="movieticket-back-end-xy" target="1.5" />
+      <module name="movieticket-back-end-xy" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

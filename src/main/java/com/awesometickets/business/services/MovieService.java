@@ -47,4 +47,9 @@ public class MovieService {
         }
         return posters;
     }
+
+    public List getMovieByName(String movieName) {
+        return movieRepo.getMovieByName(movieName);
+    }
+
 }

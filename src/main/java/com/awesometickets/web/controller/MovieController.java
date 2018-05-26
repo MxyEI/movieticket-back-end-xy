@@ -1,5 +1,6 @@
 package com.awesometickets.web.controller;
 
+import com.awesometickets.business.entities.Cinema;
 import com.awesometickets.business.entities.Movie;
 import com.awesometickets.business.entities.MovieStyle;
 import com.awesometickets.business.services.MovieService;
@@ -103,4 +104,27 @@ public class MovieController {
         }
         return new CollectionResponse(subjects);
     }
+
+
+    @RequestMapping(path = "/search",
+            method = RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public RestResponse getMovieByName(@RequestParam("movieName") String movieName,
+                                        HttpServletRequest request, HttpServletResponse response) {
+        LogUtil.logReq(Log, request);
+        List<Object[]> movielist= movieService.getMovieByName(movieName);
+        List<LinkedHashMap<String, Object>> subjects = new ArrayList<LinkedHashMap<String, Object>>();
+        for (Object[] objArr: movielist) {
+            LinkedHashMap<String, Object> mlist = new LinkedHashMap<String, Object>();
+            mlist.put("movieId", objArr[0]);
+            mlist.put("pubDate", objArr[1]);
+            mlist.put("title",objArr[2]);
+            mlist.put("length",objArr[3]);
+            mlist.put("posterSmall",objArr[4]);
+            subjects.add(mlist);
+        }
+        return new CollectionResponse(subjects);
+    }
+
+
 }

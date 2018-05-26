@@ -31,4 +31,8 @@ public interface MovieRepository extends CrudRepository<Movie, Integer> {
             "left outer join fetch m.movieStyleSet " +
             "where m.movieId = ?1")
     Movie findOneWithAllDetails(Integer movieId);
+
+    //根据电影名搜索
+    @Query("select m.movieId,m.pubDate,m.title,m.length,m.posterSmall from Movie m where m.title like %"+"?1"+"%")
+    List getMovieByName(String movieName);
 }

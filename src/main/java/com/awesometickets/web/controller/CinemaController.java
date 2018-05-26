@@ -1,5 +1,6 @@
 package com.awesometickets.web.controller;
 
+import com.awesometickets.web.controller.response.CollectionResponse;
 import com.awesometickets.web.controller.response.ErrorStatus;
 import com.awesometickets.util.LogUtil;
 import org.slf4j.Logger;
@@ -19,6 +20,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.awesometickets.business.entities.Cinema;
 import com.awesometickets.business.services.CinemaService;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
 
 
 /**
@@ -53,6 +58,24 @@ public class CinemaController {
         res.put("cinemaName", cinema.getCinemaName());
         res.put("cinemaAddr", cinema.getCinemaAddr());
         return res;
+    }
+
+    @RequestMapping(path = "/search",
+            method = RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public RestResponse getCinemaByName(@RequestParam("cinemaName") String cinemaName,
+                                      HttpServletRequest request, HttpServletResponse response) {
+        LogUtil.logReq(Log, request);
+        List<Object[]> cinemalist= cinemaService.getCinemaByName(cinemaName);
+        List<LinkedHashMap<String, Object>> subjects = new ArrayList<LinkedHashMap<String, Object>>();
+        for (Object[] objArr: cinemalist) {
+            LinkedHashMap<String, Object> mlist = new LinkedHashMap<String, Object>();
+            mlist.put("cinemaId", objArr[0]);
+            mlist.put("cinemaName", objArr[1]);
+            mlist.put("cinemaAddr",objArr[2]);
+            subjects.add(mlist);
+        }
+        return new CollectionResponse(subjects);
     }
 
 }
