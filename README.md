@@ -1,7 +1,13 @@
 # MovieTicket-Back-End-XY
 
+## 线上demo
+http://movie.btorg.org
+
 ## API地址
 http://localhost:8000/swagger-ui.html
+
+## 线上API地址
+http://movie.btorg.org:8080/movieticket-back-end-xy/swagger-ui.html
 
 
      
