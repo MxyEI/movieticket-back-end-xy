@@ -9,6 +9,7 @@ import com.awesometickets.business.services.UserService;
 import com.awesometickets.util.LogUtil;
 import com.awesometickets.web.SessionManager;
 import com.awesometickets.web.Validator;
+import com.awesometickets.web.controller.response.CollectionResponse;
 import com.awesometickets.web.controller.response.ErrorResponse;
 import com.awesometickets.web.controller.response.ErrorStatus;
 import com.awesometickets.web.controller.response.RestResponse;
@@ -158,4 +159,25 @@ public class TicketController {
         res.put("phoneNum", phoneNum);
         return res;
     }
+
+
+    @RequestMapping(path = "/returnTicket",
+            method = RequestMethod.POST,
+            produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public RestResponse returnTicket(
+            @RequestParam("ticketId") Integer ticketId,
+            HttpServletRequest request, HttpServletResponse response) {
+        LogUtil.logReq(LOG, request);
+        Boolean returnSuccess = false;
+        if(ticketId!=null){
+            returnSuccess = ticketService.returnTicket(ticketId);
+        }
+        RestResponse re = new RestResponse();
+        if(returnSuccess==true){
+            String code = "退票成功";
+            re.put("ticketCode", code);
+        }
+        return re;
+    }
+
 }

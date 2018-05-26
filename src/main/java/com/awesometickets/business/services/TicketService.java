@@ -86,6 +86,21 @@ public class TicketService {
     }
 
     /**
+     * return a ticket .
+     *
+     * @param ticketId
+     * @return True if the ticket returned successfully.
+     *         False if the ticket has not been returned.
+     */
+    public boolean returnTicket(Integer ticketId) {
+        if(ticketId!=null){
+            ticketRepo.delete(ticketId);
+            return true;
+        }
+        return false;
+    }
+
+    /**
      * Query all tickets that the user buy.
      *
      * @param phoneNum the user's phone number.
