@@ -15,4 +15,5 @@ public interface TicketRepository extends CrudRepository<Ticket, Integer> {
 
     @Query("select t.user.userId from Ticket t where t.code = ?1")
     List<Integer> findUserIdByCode(String code);
+
 }
