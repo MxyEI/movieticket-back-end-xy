@@ -1,5 +1,7 @@
 # MovieTicket-Back-End-XY
 
+## 项目说明：影院订票系统后端
+
 ## 线上demo
 http://movie.btorg.org
 
